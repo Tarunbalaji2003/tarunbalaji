@@ -3,10 +3,10 @@ name: Node.js CI
 on:
   push:
     branches:
-      - main
+      - main  # Run on pushes to the main branch
   pull_request:
     branches:
-      - main
+      - main  # Run on pull requests to the main branch
 
 jobs:
   build:
@@ -19,10 +19,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x' # Specify the version of Node.js you want to use
+          node-version: '18.x'  # Specify the Node.js version
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run dev server
-        run: npm run dev
+      - name: Run application in development mode
+        run: |
+          npm run dev &   # Start the application in the background
+          sleep 60       # Allow it to run for 60 seconds (adjust as needed)
