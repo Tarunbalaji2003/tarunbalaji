@@ -19,12 +19,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'  # Specify the Node.js version
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run application in development mode
-        run: |
-          npm run dev &   # Start the application in the background
-          sleep 60       # Allow it to run for 60 seconds (adjust as needed)
+      - name: Build application
+        run: npm run build  # Run your build script
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # Adjust this to your build output directory
