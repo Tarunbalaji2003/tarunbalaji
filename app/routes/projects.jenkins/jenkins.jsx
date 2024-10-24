@@ -6,43 +6,8 @@ import imageSprBackgroundVolcanism from '~/assets/spr-background-volcanism.jpg';
 import backgroundSpr from '~/assets/spr-background.jpg';
 import imageSprComponentsDarkLarge from '~/assets/license-plate-output.png';
 import imageSprComponentsDarkPlaceholder from '~/assets/license-plate-output.png';
-import imageSprComponentsDark from '~/assets/license-plate-output.png';
-import imageSprComponentsLightLarge from '~/assets/license-plate-output.png';
 import imageSprComponentsLightPlaceholder from '~/assets/license-plate-output.png';
-import imageSprComponentsLight from '~/assets/license-plate-output.png';
-import imageSprDesignSystemDarkLarge from '~/assets/deepstream-flow.png';
-import imageSprDesignSystemDarkPlaceholder from '~/assets/spr-design-system-dark-placeholder.png';
-import imageSprDesignSystemDark from '~/assets/deepstream-flow.png';
-import imageSprDesignSystemLightLarge from '~/assets/deepstream-flow.png';
-import imageSprDesignSystemLightPlaceholder from '~/assets/deepstream-flow.png';
-import imageSprDesignSystemLight from '~/assets/deepstream-flow.png';
-import imageSprLessonBuilderDarkLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
-import imageSprLessonBuilderDarkPlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import imageSprLessonBuilderDark from '~/assets/spr-lesson-builder-dark.jpg';
-import imageSprLessonBuilderLightLarge from '~/assets/spr-lesson-builder-light-large.jpg';
-import imageSprLessonBuilderLightPlaceholder from '~/assets/spr-lesson-builder-light-placeholder.jpg';
-import imageSprLessonBuilderLight from '~/assets/spr-lesson-builder-light.jpg';
-import videoSprMotionLarge from '~/assets/spr-motion-large.mp4';
-import videoSprMotionPlaceholder from '~/assets/spr-motion-placeholder.jpg';
-import videoSprMotion from '~/assets/spr-motion.mp4';
-import imageSprSchema1DarkLarge from '~/assets/spr-schema-1-dark-large.png';
-import imageSprSchema1DarkPlaceholder from '~/assets/spr-schema-1-dark-placeholder.png';
-import imageSprSchema1Dark from '~/assets/spr-schema-1-dark.png';
-import imageSprSchema1LightLarge from '~/assets/spr-schema-1-light-large.png';
-import imageSprSchema1LightPlaceholder from '~/assets/spr-schema-1-light-placeholder.png';
-import imageSprSchema1Light from '~/assets/spr-schema-1-light.png';
-import imageSprSchema2DarkLarge from '~/assets/spr-schema-2-dark-large.png';
-import imageSprSchema2DarkPlaceholder from '~/assets/spr-schema-2-dark-placeholder.png';
-import imageSprSchema2Dark from '~/assets/spr-schema-2-dark.png';
-import imageSprSchema2LightLarge from '~/assets/spr-schema-2-light-large.png';
-import imageSprSchema2LightPlaceholder from '~/assets/spr-schema-2-light-placeholder.png';
-import imageSprSchema2Light from '~/assets/spr-schema-2-light.png';
-import imageSprStoryboarderDarkLarge from '~/assets/spr-storyboarder-dark-large.png';
-import imageSprStoryboarderDarkPlaceholder from '~/assets/spr-storyboarder-dark-placeholder.png';
-import imageSprStoryboarderDark from '~/assets/spr-storyboarder-dark.png';
-import imageSprStoryboarderLightLarge from '~/assets/spr-storyboarder-light-large.png';
-import imageSprStoryboarderLightPlaceholder from '~/assets/spr-storyboarder-light-placeholder.png';
-import imageSprStoryboarderLight from '~/assets/spr-storyboarder-light.png';
+
 import jenkinspipeline from '~/assets/jenkinspiepline.jpg';
 import jenkinsstage from '~/assets/jenkinsstage.jpg';
 
@@ -136,8 +101,8 @@ export const jenkins = () => {
               height={800}
               placeholder={
                 isDark
-                  ? imageSprComponentsDarkPlaceholder
-                  : imageSprComponentsLightPlaceholder
+                  ? jenkinspipeline
+                  : jenkinspipeline
               }
               alt="CI/CD Pipeline Overview"
               sizes="100vw"
