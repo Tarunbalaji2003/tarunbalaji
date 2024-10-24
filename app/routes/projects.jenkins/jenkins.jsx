@@ -43,6 +43,9 @@ import imageSprStoryboarderDark from '~/assets/spr-storyboarder-dark.png';
 import imageSprStoryboarderLightLarge from '~/assets/spr-storyboarder-light-large.png';
 import imageSprStoryboarderLightPlaceholder from '~/assets/spr-storyboarder-light-placeholder.png';
 import imageSprStoryboarderLight from '~/assets/spr-storyboarder-light.png';
+import jenkinspipeline from '~/assets/jenkinspiepline.jpg';
+import jenkinsstage from '~/assets/jenkinsstage.jpg';
+
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
 import { Link } from '~/components/link';
@@ -70,27 +73,28 @@ const EarthSection = lazy(() =>
   import('./earth').then(module => ({ default: module.EarthSection }))
 );
 
-const title = 'Real-Time License Plate Recongistion System  Powered by NVIDIA DeepStream: Scalable, Fast, and Accurate';
+const title = 'Automated Deployment with Jenkins: Streamlining CI/CD Processes';
 const description =
-  'I worked as the lead developer on a major project using NVIDIA DeepStream to build a real-time license plate detection system. We took the solution in an innovative direction by leveraging the power of DeepStream for efficient video analytics and object detection. The system was designed to be deployed on edge devices for real-time processing and analysis.';
+  'As the lead developer, I spearheaded the integration of Jenkins into our CI/CD pipeline, facilitating seamless code deployment, automated testing, and artifact management. This system enhances our development workflow, ensuring high-quality code delivery with minimal manual intervention.';
+
 const roles = [
-  'System Architecture and Design',
-   'DeepStream Model Development',
-'Computer Vision and AI Integration',
-'Real-time Data Processing Optimization',
-' Edge Computing Deployment',
+  'CI/CD Pipeline Design and Implementation',
+  'Jenkins Integration for Automated Deployments',
+  'Code Quality Assurance through SonarQube',
+  'Docker Containerization for Application Deployment',
+  'Nexus Artifact Management for Efficient Storage',
 ];
 
 export const meta = () => {
   return baseMeta({ title, description, prefix: 'Projects' });
 };
 
-export const Slice = () => {
+export const jenkins = () => {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
   const themes = ['dark', 'light'];
 
-  const handleThemeChange = index => {
+  const handleThemeChange = (index) => {
     toggleTheme(themes[index]);
   };
 
@@ -106,42 +110,39 @@ export const Slice = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://github.com/Tarunbalaji2003/Deepstream_Number-plate"
+          url="https://github.com/Tarunbalaji2003"
           roles={roles}
         />
-        
-          
 
-  
-
-          
         <ProjectSection>
           <ProjectTextRow>
-            <ProjectSectionHeading>The problem</ProjectSectionHeading>
+            <ProjectSectionHeading>The Challenge</ProjectSectionHeading>
             <ProjectSectionText>
-            With the increasing demand for efficient vehicle monitoring and security, traditional license plate recognition systems struggle to handle high-volume, real-time data processing, leading to delays, inaccuracies, and limited scalability. Existing solutions often lack the computational power to analyze multiple video streams simultaneously while ensuring precise detection and recognition of license plates. There is a need for a scalable, real-time system that can process live video feeds with high accuracy, handle large datasets, and be easily deployable on edge devices or in the cloud for wide-scale implementation.
+              In today’s fast-paced development environment, manually deploying code and managing releases can lead to delays, inconsistencies, and increased risk of errors. The challenge was to create a robust CI/CD pipeline that automates the build, testing, and deployment processes to enhance efficiency and maintain high-quality standards.
             </ProjectSectionText>
           </ProjectTextRow>
         </ProjectSection>
+
         <ProjectSection light={isDark}>
           <ProjectSectionContent>
             <Image
               key={theme}
               srcSet={
                 isDark
-                  ? `${imageSprComponentsDark} 1024w, ${imageSprComponentsDarkLarge} 2048w`
-                  : `${imageSprComponentsLight} 1024w, ${imageSprComponentsLightLarge} 2048w`
+                  ? `${jenkinspipeline} 1024w, ${jenkinspipeline} 2048w`
+                  : `${jenkinspipeline} 1024w, ${jenkinspipeline} 2048w`
               }
               width={1024}
-              hright={800}
+              height={800}
               placeholder={
                 isDark
                   ? imageSprComponentsDarkPlaceholder
                   : imageSprComponentsLightPlaceholder
               }
-              alt={`A set of ${theme} themed components for the aero design system`}
+              alt="CI/CD Pipeline Overview"
               sizes="100vw"
             />
+
             <ProjectTextRow>
               <SegmentedControl
                 currentIndex={themes.indexOf(theme)}
@@ -151,14 +152,16 @@ export const Slice = () => {
                 <SegmentedControlOption>Light theme</SegmentedControlOption>
               </SegmentedControl>
             </ProjectTextRow>
+
             <ProjectTextRow>
-              <ProjectSectionHeading>The system Design</ProjectSectionHeading>
+              <ProjectSectionHeading>Pipeline Design</ProjectSectionHeading>
               <ProjectSectionText>
-              The NVIDIA DeepStream-based license plate detection system is designed for real-time vehicle monitoring using live video feeds. Leveraging advanced computer vision and GPU acceleration, the system detects vehicles and reads license plates efficiently through a DeepStream pipeline and optimized inference engine. It supports scalable deployment on edge devices or the cloud, offering high-performance detection with integrated data storage, alerting, and reporting capabilities. The below image is souced from offical documentation.
+                Our CI/CD pipeline integrates Jenkins for continuous integration and delivery, allowing for automatic builds and deployments upon code commits. The pipeline includes automated testing to ensure code quality and stability before deploying to production environments.
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
+
         <ProjectSection>
           <ProjectSectionContent>
             <Image
@@ -166,83 +169,51 @@ export const Slice = () => {
               key={theme}
               srcSet={
                 isDark
-                  ? `${imageSprDesignSystemDark} 1180w, ${imageSprDesignSystemDarkLarge} 2000w`
-                  : `${imageSprDesignSystemLight} 1280w, ${imageSprDesignSystemLightLarge} 2560w`
+                  ? `${jenkinsstage} 1180w, ${jenkinsstage} 2000w`
+                  : `${jenkinsstage} 1280w, ${jenkinsstage} 2560w`
               }
               width={1280}
               height={800}
-              placeholder={
-                isDark
-                  ? imageSprDesignSystemDarkPlaceholder
-                  : imageSprDesignSystemLightPlaceholder
-              }
-              alt="The homepage of the aero design system docs website linking to principles and components."
+              placeholder={isDark ? jenkinsstage : jenkinsstage}
+              alt="Jenkins Pipeline Diagram"
               sizes="100vw"
             />
+
             <ProjectTextRow>
-              <ProjectSectionHeading>Solution</ProjectSectionHeading>
+              <ProjectSectionHeading>Our Solution</ProjectSectionHeading>
               <ProjectSectionText>
-              Our NVIDIA DeepStream-based license plate detection system addresses the challenges of real-time vehicle monitoring with cutting-edge technology. By leveraging GPU-accelerated video analytics, our solution enables rapid and accurate detection of license plates from live video streams, ensuring high performance even with large datasets. With support for scalable deployment on edge devices and cloud platforms, our system integrates seamlessly into various security and traffic management infrastructures, offering real-time alerts, data storage, and comprehensive reporting for enhanced operational efficiency.
+                By utilizing Jenkins, we automate the process of building, testing, and deploying our applications. This not only saves time but also ensures that every piece of code is thoroughly tested and vetted before going live. The integration with SonarQube helps maintain high code quality standards, while Docker allows us to package applications consistently across environments. Finally, Nexus acts as a repository for managing our artifacts efficiently.
               </ProjectSectionText>
             </ProjectTextRow>
+
             <ProjectTextRow>
-            <ProjectSectionHeading>Techstack</ProjectSectionHeading>
-              <ProjectSectionText> <ol>
-        <li>
-          <strong>NVIDIA DeepStream SDK:</strong> Utilized for real-time video analytics and GPU-accelerated processing of video streams.
-        </li>
-        <li>
-          <strong>TensorRT:</strong> Employed for optimized model inference, enhancing the performance of object detection and recognition.
-        </li>
-        <li>
-          <strong>Optical Character Recognition (OCR):</strong> Integrated for accurate extraction and interpretation of license plate characters.
-        </li>
-        <li>
-          <strong>Python:</strong> Used for scripting and integrating various components of the system.
-        </li>
-        <li>
-          <strong>Docker:</strong> Implemented for containerization, ensuring consistent deployment across different environments.
-        </li>
-        <li>
-          <strong>CUDA:</strong> Leveraged for parallel computing and accelerating GPU-based tasks.
-        </li>
-        <li>
-          <strong>Cloud Services AWS:</strong> Optional for scalable storage and processing capabilities.
-        </li>
-        
-       
-      </ol></ProjectSectionText>
-              </ProjectTextRow>
-
-
-              <ProjectTextRow>
-            <ProjectSectionHeading>Get in Touch</ProjectSectionHeading>
+              <ProjectSectionHeading>Tech Stack</ProjectSectionHeading>
               <ProjectSectionText>
-              <p>If you’re interested in learning more about our license plate detection solution or would like to schedule a demo, here’s how you can reach out:</p>
-              
-      <ul>
-        <li>
-          <strong>Request a Demo:</strong> Contact us to arrange a personalized demonstration of the system’s capabilities.
-        </li>
-        <li>
-          <strong>Contact Us:</strong> Send us an email at <a href="mailto:tarunbalaji170703@gmail.com">tarunbalaji170703@gmail.com</a> for inquiries or further information.
-        </li>
-        <li>
-          <strong>Follow Us:</strong> Stay updated with our latest developments on  <a href="www.linkedin.com/in/tarunbalaji">LinkedIn</a>.
-        </li>
-      </ul>
+                <ol>
+                  <li><strong>Jenkins:</strong> Used for automating the CI/CD process.</li>
+                  <li><strong>SonarQube:</strong> Integrated for continuous code quality inspection.</li>
+                  <li><strong>Docker:</strong> Employed for containerization of applications.</li>
+                  <li><strong>Nexus:</strong> Used for artifact management and storage.</li>
+                  <li><strong>Git:</strong> Version control for managing source code.</li>
+                  <li><strong>AWS:</strong> Optional cloud services for scalable deployments.</li>
+                </ol>
               </ProjectSectionText>
-              </ProjectTextRow>
+            </ProjectTextRow>
+
+            <ProjectTextRow>
+              <ProjectSectionHeading>Get in Touch</ProjectSectionHeading>
+              <ProjectSectionText>
+                <p>If you’re interested in learning more about our automated deployment processes or would like to schedule a demo, here’s how you can reach out:</p>
+                <ul>
+                  <li><strong>Request a Demo:</strong> Contact us to arrange a personalized demonstration of our CI/CD capabilities.</li>
+                  <li><strong>Contact Us:</strong> Send us an email at <a href="mailto:tarunbalaji170703@gmail.com">tarunbalaji170703@gmail.com</a> for inquiries or further information.</li>
+                  <li><strong>Follow Us:</strong> Stay updated with our latest developments on <a href="https://www.linkedin.com/in/tarunbalaji">LinkedIn</a>.</li>
+                </ul>
+              </ProjectSectionText>
+            </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
-        <ThemeProvider theme="dark" data-invert>
-         
-            
-        </ThemeProvider>
-       
-      
-        
-                   
+        <ThemeProvider theme="dark" data-invert />
       </ProjectContainer>
       <Footer />
     </>

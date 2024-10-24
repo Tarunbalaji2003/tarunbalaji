@@ -18,7 +18,8 @@ import { ProjectSummary } from './project-summary';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
-
+import alertmail from '~/assets/alertmail.jpg';
+import alertmanager from '~/assets/alertmanager.jpg'
 // Prefetch draco decoader wasm
 export const links = () => {
   return [
@@ -125,21 +126,21 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
-        buttonText="Click for demo link"
+        title="Prometheus Alert Manager"
+        description="Configuration and development of a system using Prometheus to monitor metrics and send alerts via email."
+        buttonText="Click for Github link"
         buttonLink=""
         model={{
           type: 'phone',
           alt: 'App login screen',
           textures: [
             {
-              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
-              placeholder: gamestackTexturePlaceholder,
+              srcSet: `${alertmanager} 375w, ${alertmanager} 750w`,
+              placeholder: alertmanager,
             },
             {
-              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
-              placeholder: gamestackTexture2Placeholder,
+              srcSet: `${alertmail} 375w, ${alertmail} 750w`,
+              placeholder: alertmail,
             },
           ],
         }}
@@ -154,7 +155,7 @@ export const Home = () => {
         title="Biomedical image collaboration"
         description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
         buttonText="View project"
-        buttonLink="/projects/slice"
+        buttonLink="/projects/jenkins"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',
