@@ -1,9 +1,3 @@
-import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
 import sliceTextureLarge from '~/assets/slice-app-large.jpg';
 import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
 import sliceTexture from '~/assets/slice-app.jpg';
@@ -19,6 +13,7 @@ import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
 import alertmail from '~/assets/alertmail.jpg';
+import jenkinsstage from '~/assets/jenkinsstage.jpg';
 import alertmanager from '~/assets/alertmanager.jpg'
 // Prefetch draco decoader wasm
 export const links = () => {
@@ -152,17 +147,17 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
+        title="Automated Deployment with Jenkins"
+        description="Streamlining CI/CD processes with Jenkins, SonarQube, Docker, and Nexus for efficient code deployment and artifact management."
         buttonText="View project"
         buttonLink="/projects/jenkins"
         model={{
           type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
+          alt: 'Jenkins pipeline stages for automated deployment',
           textures: [
             {
-              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
-              placeholder: sliceTexturePlaceholder,
+              srcSet: `${jenkinsstage} 800w, ${jenkinsstage} 1920w`,
+              placeholder: jenkinsstage,
             },
           ],
         }}
