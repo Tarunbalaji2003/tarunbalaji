@@ -26,9 +26,9 @@ export const socialLinks = [
     icon: 'twitter',
   },
   {
-    label: 'Figma',
-    url: `https://www.figma.com/${config.figma}`,
-    icon: 'figma',
+    label: 'Linkedin',
+    url: `https://www.linkedin.com/in/tarunbalaji/`,
+    icon: 'linkedin',
   },
   {
     label: 'Github',
