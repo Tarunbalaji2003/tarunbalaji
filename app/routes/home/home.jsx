@@ -36,7 +36,7 @@ export const links = () => {
 export const meta = () => {
   return baseMeta({
     title: ' Developer',
-    description: `Design portfolio of ${config.name} — a devsecops engineer.`,
+    description: `Design portfolio of ${config.name} — a DevSecOps engineer.`,
   });
 };
 
