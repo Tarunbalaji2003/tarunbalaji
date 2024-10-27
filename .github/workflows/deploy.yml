@@ -1,9 +1,9 @@
-name: Deploy Vite App to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # change this if your main branch has a different name
+      - main  # Adjust to the branch you want to trigger deployment
 
 jobs:
   deploy:
@@ -12,18 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '19'  # specify your Node version
-
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
+      - name: Build project
+        run: npm run build  # Adjust based on your build script
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/client
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "YourName"
+          git remote set-url origin https://${{ secrets.GH_TOKEN }}@github.com/Tarunbalaji2003/tarunbalaji.git
+          npx gh-pages -d build/client
