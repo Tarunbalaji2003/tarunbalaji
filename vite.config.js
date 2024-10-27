@@ -1,7 +1,4 @@
-import {
-  vitePlugin as remix,
-  cloudflareDevProxyVitePlugin as remixCloudflareDevProxy,
-} from '@remix-run/dev';
+import { vitePlugin as remix, cloudflareDevProxyVitePlugin as remixCloudflareDevProxy } from '@remix-run/dev';
 import { defineConfig } from 'vite';
 import jsconfigPaths from 'vite-jsconfig-paths';
 import mdx from '@mdx-js/rollup';
@@ -11,17 +8,16 @@ import rehypeImgSize from 'rehype-img-size';
 import rehypeSlug from 'rehype-slug';
 import rehypePrism from '@mapbox/rehype-prism';
 
-const isStorybook = process.argv[1]?.includes('storybook');
+// Set your GitHub repository name here
+const repoName = 'tarun-portfolio';
 
 export default defineConfig({
-  base: "/tarun-portfolio/",
+  // Set base to match the GitHub Pages repository path
+  base: `/${repoName}/`,
   assetsInclude: ['**/*.glb', '**/*.hdr', '**/*.glsl'],
   build: {
     assetsInlineLimit: 1024,
     outDir: 'build/client',
-  },
-  server: {
-    port: 7777,
   },
   plugins: [
     mdx({
@@ -29,7 +25,6 @@ export default defineConfig({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       providerImportSource: '@mdx-js/react',
     }),
-    remixCloudflareDevProxy(),
     remix({
       routes(defineRoutes) {
         return defineRoutes(route => {
